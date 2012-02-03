@@ -1,11 +1,23 @@
 package Arthas::Defaults;
 
 use v5.14;
-use utf8;
 use warnings;
-no warnings 'uninitialized';
+use utf8;
 
-our $VERSION = qv("v1.0.0");
+use version;
+our $VERSION = qv("v1.0.1");
+
+sub import {
+    feature->import(':5.14');
+    warnings->import();
+    warnings->unimport('uninitialized');
+}
+
+sub unimport {
+    feature->unimport();
+    warnings->unimport();
+}
+
 
 =head1 NAME
 

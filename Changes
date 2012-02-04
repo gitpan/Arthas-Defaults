@@ -1,5 +1,8 @@
 Revision history for Perl extension Arthas::Defaults.
 
+2.0.3
+    - minor fixes
+
 2.0.2
     - fix POD error
 

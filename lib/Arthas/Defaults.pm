@@ -8,7 +8,7 @@ use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v2.0.2");
+our $VERSION = qv("v2.0.3");
 
 require Exporter;
 our @ISA       = ('Exporter');
@@ -31,8 +31,6 @@ sub unimport {
     feature->unimport();
     warnings->unimport();
     utf8->unimport();
-    Carp->unimport();
-    Try::Tiny->unimport();
 }
 
 
@@ -91,7 +89,7 @@ variables are a bit of a pain. Writing a code such as this:
         say 'Maya!';
     }
 
-would yeld to a warning, thus forcing you to write:
+would emit a warning, thus forcing you to write:
 
     my $str;
     
@@ -116,7 +114,7 @@ C<eval>.
 
 =head1 AUTHOR
 
-Michele Beltrame, C<mb@italpro.net>
+Michele Beltrame, C<arthas@cpan.org>
 
 =head1 LICENSE
 

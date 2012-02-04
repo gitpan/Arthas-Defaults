@@ -4,6 +4,6 @@ MANIFEST
 META.yml
 Makefile.PL
 README
-README.txt
 dist.ini
 lib/Arthas/Defaults.pm
+t/00basic.t

@@ -8,7 +8,7 @@ use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v2.0.1");
+our $VERSION = qv("v2.0.2");
 
 require Exporter;
 our @ISA       = ('Exporter');
@@ -56,6 +56,8 @@ It's like saying:
     use Try::Tiny;
 
 Might change without notice, at any time. DO NOT USE!
+
+=over
 
 =item C<use v5.14>
 

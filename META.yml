@@ -12,4 +12,6 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Arthas-Defaults
-version: 2.0.0
+requires:
+  Try::Tiny: 0
+version: 2.0.1

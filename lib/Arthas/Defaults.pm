@@ -5,10 +5,10 @@ use warnings;
 use utf8;
 use feature();
 use version;
-use Carp;
+use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v2.0.0");
+our $VERSION = qv("v2.0.1");
 
 require Exporter;
 our @ISA       = ('Exporter');

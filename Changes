@@ -1,5 +1,10 @@
 Revision history for Perl extension Arthas::Defaults.
 
+2.0.1
+    - little bugfixes
+    - fix email address
+    - fix dependencies
+    
 2.0.0
     - added Carp and Try::Tiny
     - wrote documentation

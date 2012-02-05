@@ -2,7 +2,8 @@
 abstract: "Defaults for coding - Do not use if you're not Arthas"
 author:
   - 'Michele Beltrame <mb@italpro.net>'
-build_requires: {}
+build_requires:
+  Test::Exception: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
@@ -14,4 +15,5 @@ meta-spec:
 name: Arthas-Defaults
 requires:
   Try::Tiny: 0
-version: 2.0.3
+  perl: 5.14.2
+version: 2.0.4

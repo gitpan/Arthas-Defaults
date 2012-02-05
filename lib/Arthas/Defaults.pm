@@ -8,7 +8,7 @@ use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v2.0.3");
+our $VERSION = qv("v2.0.4");
 
 require Exporter;
 our @ISA       = ('Exporter');
@@ -33,6 +33,9 @@ sub unimport {
     utf8->unimport();
 }
 
+1;
+
+__END__
 
 =head1 NAME
 
@@ -69,10 +72,10 @@ This is NOT related to handling UTF-8 strings or input/output (see
 C<use feature 'unicode_strings'> imported with C<use v5.14> for
 something more related to that).
 
-C<use utf8> is improted to allow UTF-8 characters inside the source
+C<use utf8> is imported in order to allow UTF-8 characters inside the source
 code: while using UTF-8 in the source is not standard procedure, it
 happens to me every now and then. Also, enabling this feature does
-no harm if you're using a recent version of perl, so why no enable it?
+no harm if you're using a recent version of perl, so why not enable it?
 
 =item C<use warnings>
 
@@ -118,9 +121,8 @@ Michele Beltrame, C<arthas@cpan.org>
 
 =head1 LICENSE
 
-This library is free software . You can redistribute it and/or modify
+This library is free software. You can redistribute it and/or modify
 it under the same terms as perl itself.
 
 =cut
 
-1;

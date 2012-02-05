@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+use 5.014002;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -11,7 +11,9 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Defaults for coding - Do not use if you're not Arthas",
   "AUTHOR" => "Michele Beltrame <mb\@italpro.net>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Test::Exception" => 0
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -22,7 +24,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Try::Tiny" => 0
   },
-  "VERSION" => "2.0.3",
+  "VERSION" => "2.0.4",
   "test" => {
     "TESTS" => "t/*.t"
   }

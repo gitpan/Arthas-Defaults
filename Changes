@@ -1,5 +1,8 @@
 Revision history for Perl extension Arthas::Defaults.
 
+2.0.4 - Feb 5th, 2012
+    - fix errors in deps leading to failed tests
+
 2.0.3
     - minor fixes
 

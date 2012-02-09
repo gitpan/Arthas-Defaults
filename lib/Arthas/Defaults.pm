@@ -8,7 +8,7 @@ use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v2.0.4");
+our $VERSION = qv("v2.0.5");
 
 require Exporter;
 our @ISA       = ('Exporter');
@@ -19,6 +19,7 @@ our @EXPORT    = qw/
 
 sub import {
     feature->import(':5.14');
+    strict->import();
     warnings->import();
     warnings->unimport('uninitialized');
     utf8->import();
@@ -29,6 +30,7 @@ sub import {
 
 sub unimport {
     feature->unimport();
+    strict->unimport();
     warnings->unimport();
     utf8->unimport();
 }

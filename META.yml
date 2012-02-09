@@ -16,4 +16,4 @@ name: Arthas-Defaults
 requires:
   Try::Tiny: 0
   perl: 5.14.2
-version: 2.0.4
+version: 2.0.5

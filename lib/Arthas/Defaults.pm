@@ -1,14 +1,15 @@
 package Arthas::Defaults;
 
 use v5.14;
-use warnings;
+use warnings FATAL => 'all';
+no warnings 'uninitialized';
 use utf8;
 use feature();
 use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v2.0.5");
+our $VERSION = qv("v3.0.0");
 
 require Exporter;
 our @ISA       = ('Exporter');
@@ -20,7 +21,7 @@ our @EXPORT    = qw/
 sub import {
     feature->import(':5.14');
     strict->import();
-    warnings->import();
+    warnings->import(FATAL => 'all');
     warnings->unimport('uninitialized');
     utf8->import();
 
@@ -65,7 +66,7 @@ Might change without notice, at any time. DO NOT USE!
 =item C<use v5.14>
 
 This is actually C<use feature ':5.14'>. It imports some perl 5.10 -> 5.14
-semantics, such as strictures, given-when syntax, Unicode strings, ... See
+semantics, such as strict, given-when syntax, Unicode strings, ... See
 L<feature> documentation and source code for more information.
 
 =item C<use utf8>
@@ -79,9 +80,12 @@ code: while using UTF-8 in the source is not standard procedure, it
 happens to me every now and then. Also, enabling this feature does
 no harm if you're using a recent version of perl, so why not enable it?
 
-=item C<use warnings>
+=item C<use warnings FATAL => 'all'>
 
 Warnings are useful, who wouldn't want them?
+
+However, if they are not treated as fatal errors, they are often
+ignored, making them pointless. So, be fatal!
 
 =item C<no warnings 'uninitialized'>
 

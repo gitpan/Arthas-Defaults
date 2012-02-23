@@ -22,9 +22,10 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Arthas::Defaults",
   "PREREQ_PM" => {
-    "Try::Tiny" => 0
+    "Try::Tiny" => 0,
+    "version" => "0.77"
   },
-  "VERSION" => "2.0.5",
+  "VERSION" => "3.0.0",
   "test" => {
     "TESTS" => "t/*.t"
   }

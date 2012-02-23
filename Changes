@@ -1,5 +1,8 @@
 Revision history for Perl extension Arthas::Defaults.
 
+3.0.0 - Feb 23rd, 2012
+    - All warning are now fatal
+
 2.0.5 - Feb 9th, 2012
     - fix bug for which strictures were not imported
 

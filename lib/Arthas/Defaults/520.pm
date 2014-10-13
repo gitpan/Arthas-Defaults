@@ -1,15 +1,15 @@
-package Arthas::Defaults;
+package Arthas::Defaults::520;
 
-use v5.14;
+use v5.20;
 use warnings FATAL => 'all';
 no warnings 'uninitialized';
 use utf8;
 use feature();
+use experimental 'signatures';
+use experimental 'postderef';
 use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
-
-our $VERSION = qv("v4.0.0");
 
 require Exporter;
 our @ISA       = ('Exporter');
@@ -19,14 +19,17 @@ our @EXPORT    = qw/
 /;
 
 sub import {
-    feature->import(':5.14');
+    feature->import(':5.20');
     strict->import();
     warnings->import(FATAL => 'all');
     warnings->unimport('uninitialized');
     utf8->import();
 
+    experimental->import('signatures');
+    experimental->import('postderef');
+
     # Export all @EXPORT
-    Arthas::Defaults->export_to_level(1, @_);
+    Arthas::Defaults::520->export_to_level(1, @_);
 }
 
 sub unimport {
@@ -34,6 +37,9 @@ sub unimport {
     strict->unimport();
     warnings->unimport();
     utf8->unimport();
+
+    experimental->unimport('signatures');
+    experimental->unimport('postderef');
 }
 
 1;
@@ -42,7 +48,7 @@ __END__
 
 =head1 NAME
 
-Arthas::Defaults - Defaults for coding - Do not use if you're not Arthas
+Arthas::Defaults::520 - Defaults for coding with perl 5.20 - Do not use if you're not Arthas
 
 =head1 SYNOPSIS
 
@@ -56,6 +62,8 @@ It's like saying:
     use utf8;
     use warnings;
     no warnings 'uninitialized';
+    use experimental 'signatures';
+    use experimental 'postderef';
     use Carp qw/carp croak confess cluck/;
     use Try::Tiny;
 
@@ -112,6 +120,14 @@ which is boring enough to justify suppressing these warnings.
 
 These functions are very useful to show error details better
 than that of C<die()> and C<warn()>.
+
+=item C<use experimental 'signatures'>
+
+We waited 20 years to get these, so it's time use them.
+
+=item C<use experimental 'postderef'>
+
+Even though I still have some doubts on this, it seems a nice feature.
 
 =item C<use Try::Tiny>
 

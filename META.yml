@@ -17,4 +17,4 @@ requires:
   Try::Tiny: '0'
   perl: v5.14.2
   version: '0.77'
-version: 4.0.0
+version: 4.0.1

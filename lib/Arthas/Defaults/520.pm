@@ -58,7 +58,7 @@ Arthas::Defaults::520 - Defaults for coding with perl 5.20 - Do not use if you'r
 
 It's like saying:
 
-    use v5.14;
+    use v5.20;
     use utf8;
     use warnings;
     no warnings 'uninitialized';
@@ -71,16 +71,16 @@ Might change without notice, at any time. DO NOT USE!
 
 =over
 
-=item C<use v5.14>
+=item C<use v5.20>
 
-This is actually C<use feature ':5.14'>. It imports some perl 5.10 -> 5.14
+This is actually C<use feature ':5.20'>. It imports some perl 5.10 -E<gt> 5.20
 semantics, such as strict, given-when syntax, Unicode strings, ... See
 L<feature> documentation and source code for more information.
 
 =item C<use utf8>
 
 This is NOT related to handling UTF-8 strings or input/output (see
-C<use feature 'unicode_strings'> imported with C<use v5.14> for
+C<use feature 'unicode_strings'> imported with C<use v5.20> for
 something more related to that).
 
 C<use utf8> is imported in order to allow UTF-8 characters inside the source
@@ -88,7 +88,7 @@ code: while using UTF-8 in the source is not standard procedure, it
 happens to me every now and then. Also, enabling this feature does
 no harm if you're using a recent version of perl, so why not enable it?
 
-=item C<use warnings FATAL => 'all'>
+=item C<use warnings FATAL =E<gt> 'all'>
 
 Warnings are useful, who wouldn't want them?
 

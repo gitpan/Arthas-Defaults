@@ -9,7 +9,7 @@ use version;
 use Carp qw/carp croak confess cluck/;
 use Try::Tiny;
 
-our $VERSION = qv("v4.0.0");
+our $VERSION = qv("v4.0.1");
 
 require Exporter;
 our @ISA       = ('Exporter');
